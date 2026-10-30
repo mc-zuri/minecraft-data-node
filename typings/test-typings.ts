@@ -43,6 +43,10 @@ console.log(getMcData('bedrock_0.14').type)
 
 console.log(getMcData('1.8').enchantments[5])
 
+console.log(getMcData('bedrock_1.21.0').itemsByName['oak_planks'].tags?.includes('minecraft:planks'))
+console.log(getMcData('bedrock_1.21.0').complexAliasesByName?.['minecraft:log'].items[1])
+console.log(getMcData('bedrock_1.21.0').complexAliases?.[0].name)
+
 console.log(getMcData.supportedVersions.pc)
 
 console.log(getMcData.schemas.blocks)

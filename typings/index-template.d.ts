@@ -129,6 +129,15 @@ export interface IndexedData {
   itemsByName: { [name: string]: Item }
   itemsArray: Item[]
 
+  /**
+   * Bedrock edition only, starting with 1.19.70
+   */
+  complexAliases?: ComplexAliases
+  /**
+   * Bedrock edition only, starting with 1.19.70
+   */
+  complexAliasesByName?: { [name: string]: ComplexAlias }
+
   foods: { [id: number]: Food }
   foodsByName: { [name: string]: Food }
   foodsArray: Food[]

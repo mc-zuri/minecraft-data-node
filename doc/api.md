@@ -110,6 +110,24 @@ console.log(mcData.itemsByName['wheat']) // Object containing information for "W
 
 Array of items
 
+### mcData.complexAliases
+
+**_Bedrock edition only, starting with 1.19.70_**
+
+Array of the old item names whose data values became items of their own, each with its items by data value (the index is the data value)
+
+### mcData.complexAliasesByName
+
+**_Bedrock edition only, starting with 1.19.70_**
+
+Complex aliases indexed by name, namespace included
+
+Example:
+
+```js
+console.log(mcData.complexAliasesByName['minecraft:log'].items[1]) // "spruce_log"
+```
+
 ## Foods
 
 ### mcData.foods

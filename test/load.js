@@ -110,3 +110,19 @@ describe('supportFeature', () => {
     assert.strictEqual(mcData.isNewerOrEqualTo('1.7.10'), true)
   })
 })
+
+describe('bedrock item tags and complex aliases', () => {
+  it('names an item\'s tags with their namespace', function () {
+    const mcData = require('minecraft-data')('bedrock_1.21.0')
+    assert.deepStrictEqual(mcData.itemsByName.oak_planks.tags, ['minecraft:planks'])
+    assert.strictEqual('tags' in mcData.itemsByName.stick, false)
+  })
+
+  it('indexes a complex alias\'s items by data value from 1.19.70', function () {
+    const mcData = require('minecraft-data')('bedrock_1.21.0')
+    assert.strictEqual(mcData.complexAliases[0], mcData.complexAliasesByName['minecraft:banner_pattern'])
+    assert.deepStrictEqual(mcData.complexAliasesByName['minecraft:log'].items, ['oak_log', 'spruce_log', 'birch_log', 'jungle_log'])
+    assert.strictEqual(require('minecraft-data')('bedrock_1.19.63').complexAliases, undefined)
+    assert.strictEqual(require('minecraft-data')('1.20.4').complexAliasesByName, undefined)
+  })
+})
